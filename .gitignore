@@ -1,0 +1,25 @@
+# 動画・音声 (テスト素材や出力をコミットしない)
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.ogg
+*.aac
+
+# ツールが作るフォルダ
+_montage_cache/
+_feed_debug/
+
+# Python / ビルド
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.spec
