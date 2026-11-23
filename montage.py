@@ -327,6 +327,12 @@ def get_beats(music, bpm, music_start):
 
 # ================================================================ main
 def main():
+    # Windowsのコンソールやパイプ (cp932/cp1252) でも日本語の出力で落ちないようにする
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
     ap = argparse.ArgumentParser(description="キル動画のフォルダからモンタージュ動画を作る")
     ap.add_argument("folder", nargs="?", help="動画の入ったフォルダ (省略すると対話モード)")
     g = ap.add_argument_group("キルログモード")
